@@ -28,8 +28,12 @@
                     id="username"
                     placeholder="Username . . ."
                     name="username"
-                    class="form-control"
+                    value="<%= value.username ? value.username : '' %>"
+                    class="form-control <%= error.username ? 'is-invalid' : '' %>"
                   />
+                  <div class="invalid-feedback">
+                    <%= error.username && error.username %>
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label ms-2"
@@ -40,8 +44,12 @@
                     id="email"
                     placeholder="Email . . ."
                     name="email"
-                    class="form-control"
+                    value="<%= value.email ? value.email : '' %>"
+                    class="form-control <%= error.email ? 'is-invalid' : '' %>"
                   />
+                  <div class="invalid-feedback">
+                    <%= error.email && error.email %>
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="password" class="form-label ms-2"
@@ -52,8 +60,12 @@
                     id="password"
                     placeholder="*******"
                     name="password"
-                    class="form-control"
+                    value="<%= value.password ? value.password : '' %>"
+                    class="form-control <%= error.password ? 'is-invalid' : '' %>"
                   />
+                  <div class="invalid-feedback">
+                    <%= error.password && error.password %>
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="passwordConfirm" class="form-label ms-2"
@@ -64,8 +76,11 @@
                     id="passwordConfirm"
                     placeholder="*******"
                     name="passwordConfirm"
-                    class="form-control"
+                    class="form-control <%= error.confirmPassword ? 'is-invalid' : '' %>"
                   />
+                  <div class="invalid-feedback">
+                    <%= error.confirmPassword && error.confirmPassword %>
+                  </div>
                 </div>
                 <div class="my-4 d-grid">
                   <input

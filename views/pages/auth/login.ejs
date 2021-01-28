@@ -26,8 +26,12 @@
                     id="email"
                     placeholder="Email . . ."
                     name="email"
-                    class="form-control"
+                    value="<%= value.email ? value.email : '' %>"
+                    class="form-control <%= error.email ? 'is-invalid' : '' %>"
                   />
+                  <div class="invalid-feedback">
+                    <%= error.email && error.email %>
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="password" class="form-label ms-2"
@@ -38,8 +42,11 @@
                     id="password"
                     placeholder="*******"
                     name="password"
-                    class="form-control"
+                    class="form-control <%= error.password ? 'is-invalid' : '' %>"
                   />
+                  <div class="invalid-feedback">
+                    <%= error.password && error.password %>
+                  </div>
                 </div>
                 <div class="my-4 d-grid">
                   <input
